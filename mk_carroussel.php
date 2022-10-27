@@ -12,18 +12,42 @@
  * Version: 1.0.0
  */
 
+ /*
+filemtime() // retourne en milliseconde le temps de la dernière sauvegarde
+plugin_dir_path() // retourne le chemin du répertoire du plugin
+__FILE__ // le fichier en train de s'exécuter
+wp_enqueue_style() // Intègre le link:css dans la page
+wp_enqueue_script() // intègre le script dans la page
+wp_enqueue_scripts // le hook
+ */
+
+function mk_enqueue() {
+    $version_css = filemtime(plugin_dir_path(__FILE__).'style.css');
+    $version_js = filemtime(plugin_dir_path(__FILE__).'js/carroussel.js');
+
+    wp_enqueue_style("mk_carroussel",
+                    plugin_dir_url(__FILE__) . "style.css",
+                    array(), $version_css, false);
+    wp_enqueue_script('mk_carrousel',
+                    plugin_dir_url(__FILE__) . "js/carroussel.js",
+                    array(), $version_js, true);
+}
+
+add_action("wp_enqueue_scripts", "mk_enqueue");
+
 function boite_carroussel(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     $contenu =
-    "<section class='carroussel'>"
+    "<button class='bouton'>Ouvrir carroussel</button>
+    <div class='carroussel'>"
     . "<button class='carroussel--fermer'>X</button>"
     . "<figure class='carroussel__figure'></figure>"
     . "<form class='carroussel__form'>
     <input type='radio' name='carroussel_radio'>1</input>
     <input type='radio' name='carroussel_radio'>2</input>
     </form>"
-    . '</section> <!-- fin class="carroussel" -->';
+    . '</div> <!-- fin class="carroussel" -->';
 
     return $contenu;
 }

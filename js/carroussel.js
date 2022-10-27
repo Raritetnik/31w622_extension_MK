@@ -18,8 +18,8 @@
         elmCarroussel.classList.remove('carroussel__ouvrir');
     });
 
-    /*let figure = elmCarroussel.querySelector('.carroussel__figure');
-    let getFigureImages = document.querySelector('#galerie');
+    let figure = elmCarroussel.querySelector('.carroussel__figure');
+    let getFigureImages = document.querySelector('.galerie');
     figure.innerHTML = getFigureImages.innerHTML;
-    getFigureImages.innerHTML = ""*/
+    getFigureImages.innerHTML = ""
 })();

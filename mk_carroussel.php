@@ -12,18 +12,20 @@
  * Version: 1.0.0
  */
 
-function genere_html(){
+function boite_carroussel(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     $contenu =
-    "<div class='boite'>"
-    . "<code>Auteur: " . get_the_author() . "</code>"
-    . "<date>Date de publication: " . get_the_date() . "</date>"
-    . "<h5>Adresse URL" . get_the_guid() . "</h5>"
-    . "<h6>Catégorie: " . get_the_category() . "</h6>"
-    . '</div> <!-- fin class="boite" -->';
+    "<section class='carroussel'>"
+    . "<button class='carroussel--fermer'>X</button>"
+    . "<figure class='carroussel__figure'></figure>"
+    . "<form class='carroussel__form'>
+    <input type='radio' name='carroussel_radio'>1</input>
+    <input type='radio' name='carroussel_radio'>2</input>
+    </form>"
+    . '</section> <!-- fin class="carroussel" -->';
 
     return $contenu;
 }
-add_shortcode('mk_carroussel', 'genere_html');
+add_shortcode('mk_carroussel', 'boite_carroussel');
 ?>

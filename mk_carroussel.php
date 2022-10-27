@@ -43,10 +43,7 @@ function boite_carroussel(){
     <div class='carroussel'>"
     . "<button class='carroussel--fermer'>X</button>"
     . "<figure class='carroussel__figure'></figure>"
-    . "<form class='carroussel__form'>
-    <input type='radio' name='carroussel_radio'>1</input>
-    <input type='radio' name='carroussel_radio'>2</input>
-    </form>"
+    . "<form class='carroussel__form'></form>"
     . '</div> <!-- fin class="carroussel" -->';
 
     return $contenu;

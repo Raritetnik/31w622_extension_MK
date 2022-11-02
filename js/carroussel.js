@@ -5,12 +5,16 @@
     let elmBoutonOuvrir = document.querySelector('.bouton');
     let elmCarroussel = document.querySelector('.carroussel');
     elmBoutonOuvrir.addEventListener('mousedown', function() {
-        console.log('Ouverture de carroussel');
-        elmCarroussel.classList.add('carroussel__ouvrir');
-        for(let elmImg of elmGalerieImg) {
-            console.log(elmImg.getAttribute("src"));
+        for(const elmImg of elmGalerieImg) {
+            let newElmImg = document.createElement('img');
+            newElmImg.src = elmImg.src
         }
+        elmCarroussel.classList.add('carroussel__ouvrir');
     });
+
+
+
+
 
     let elmBoutonFermer = document.querySelector('.carroussel--fermer');
     elmBoutonFermer.addEventListener('mousedown', function() {
@@ -18,8 +22,21 @@
         elmCarroussel.classList.remove('carroussel__ouvrir');
     });
 
-    let figure = elmCarroussel.querySelector('.carroussel__figure');
-    let getFigureImages = document.querySelector('.galerie');
-    figure.innerHTML = getFigureImages.innerHTML;
-    getFigureImages.innerHTML = ""
+    elmGalerie.addEventListener('click', this.afficherImageCarroussel);
+    //figure.innerHTML = getFigureImages.innerHTML;
+    //getFigureImages.innerHTML = ""
 })();
+
+
+
+function afficherImageCarroussel(e) {
+    let cible = e.target;
+    let elmCarroussel = document.querySelector('.carroussel');
+    console.log(e.target);
+    let figure = elmCarroussel.querySelector('.carroussel__figure');
+    console.log('OUVERTUTE');
+    elmCarroussel.classList.add('carroussel__ouvrir');
+    console.log(cible.src);
+    figure.innerHTML = `<img src='${cible.src}' data-id='61' width="1920" heigth="1080" class='wp-image-61'>`;
+
+}

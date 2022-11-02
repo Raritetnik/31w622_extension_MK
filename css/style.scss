@@ -1,27 +1,58 @@
-.carroussel {
+.carrousel {
     position: absolute;
-    left: 25%;
-    top: 25%;
-    z-index: 9999;
-
-    background-color: rgba($color: #000000, $alpha: .8);
-    min-height: 100vh;
-    min-width: 50vw;
-
+    left: 12.5vw;
+    top: 12.5vh;
+    width: 75vw;
+    height: 75vh;
+    background-color: aqua;
     transform: scale(0);
     opacity: 0;
-    transition: transform .5s, opacity .5s;
-}
+    transition: transform 1s, opacity 1s;
+    z-index: 1;
+  }
 
-.carroussel__ouvrir {
+  .carrousel--ouvrir {
     transform: scale(1);
     opacity: 1;
-}
+  }
 
-.carroussel__figure {
+  .carrousel__x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 2rem;
+    height: 2rem;
+    z-index: 3;
+  }
 
-}
+  .carrousel__figure {
+  }
 
-.carroussel__figure__img {
+  .carrousel__figure__img {
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    //z-index: 2;
+  }
+  .carrousel__figure .activer {
+    opacity: 1;
+  }
 
-}
+  .carrousel__form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+  }

@@ -39,12 +39,12 @@ function boite_carroussel(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     $contenu =
-    "<button class='bouton'>Ouvrir carroussel</button>
-    <div class='carroussel'>"
-    . "<button class='carroussel--fermer'>X</button>"
-    . "<figure class='carroussel__figure'></figure>"
-    . "<form class='carroussel__form'></form>"
-    . '</div> <!-- fin class="carroussel" -->';
+    "<button class='bouton'>Ouvrir carrousel</button>"
+     .'<div class="carrousel">'
+        .'<button class="carrousel__x">X</button>'
+        .'<figure class="carrousel__figure"></figure>'
+        .'<form class="carrousel__form"></form>'
+    . '</div> <!-- fin class="carrousel" -->';
 
     return $contenu;
 }

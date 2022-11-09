@@ -42,6 +42,8 @@ function boite_carroussel(){
     "<button class='bouton'>Ouvrir carrousel</button>"
      .'<div class="carrousel">'
         .'<button class="carrousel__x">X</button>'
+        .'<i class="fa-solid arrow fa-arrow-left"></i>'
+        .'<i class="fa-solid arrow fa-arrow-right"></i>'
         .'<figure class="carrousel__figure"></figure>'
         .'<form class="carrousel__form"></form>'
     . '</div> <!-- fin class="carrousel" -->';

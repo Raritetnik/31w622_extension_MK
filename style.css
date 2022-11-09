@@ -52,4 +52,26 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
+}
+
+/** Icons de arrow gauche et droite */
+.arrow {
+  display: block;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 100;
+  font-size: 4vmin;
+  color: rgba(255, 255, 255, 0.7);
+  border: 0.7vmin solid rgba(255, 255, 255, 0.7);
+  padding: 0.4vmin;
+  border-radius: 50%;
+}
+
+i.fa-arrow-right {
+  right: 2vmin;
+}
+
+i.fa-arrow-left {
+  left: 2vmin;
 }/*# sourceMappingURL=style.css.map */

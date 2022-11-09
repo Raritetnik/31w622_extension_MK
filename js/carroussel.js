@@ -12,6 +12,9 @@
     let elmGalerie = document.querySelector(".galerie");
     let elmGalerieImg = document.querySelectorAll(".galerie figure img");
 
+    const elmButtonNextImage = document.querySelector('.fa-arrow-right')
+    const elmButtonPrevImage = document.querySelector('.fa-arrow-left')
+
     /**
      * Gestion de bouton ouverture / fermeture
      */
@@ -23,6 +26,39 @@
         elmCarrousel.classList.remove("carrousel--ouvrir");
     });
 
+
+    // Fleches left right
+    elmButtonNextImage.addEventListener('mousedown', () => {
+      elmActiveImg = elmCarrousel__figure.querySelector('.activer');
+      dernierIndex = elmActiveImg.dataset.index;
+      index = elmActiveImg.dataset.index;
+      elmActiveImg.classList.remove('activer');
+
+      elmNextImg = elmCarrousel__figure.querySelector(`[data-index='${++index}']`);
+      if(elmNextImg == null) {
+        index= 0;
+        elmNextImg = elmCarrousel__figure.querySelector(`[data-index='${index}']`);
+      }
+      elmCarrousel__form.querySelector(`[data-index='${index}']`).checked = true;
+      elmNextImg.classList.add('activer');
+    });
+
+    elmButtonPrevImage.addEventListener('mousedown', () => {
+      elmActiveImg = elmCarrousel__figure.querySelector('.activer');
+      dernierIndex = elmActiveImg.dataset.index;
+      index = elmActiveImg.dataset.index;
+      elmActiveImg.classList.remove('activer');
+
+      let quantiteImages = elmCarrousel.querySelectorAll('.carrousel__form__radio').length;
+      if(index <= 0) {
+        index = quantiteImages-1
+        elmNextImg = elmCarrousel__figure.querySelector(`[data-index='${index}']`);
+      } else {
+        elmNextImg = elmCarrousel__figure.querySelector(`[data-index='${--index}']`);
+      }
+      elmCarrousel__form.querySelector(`[data-index='${index}']`).checked = true;
+      elmNextImg.classList.add('activer');
+    });
 
     // Ajout des images dans la carroussel
     for (const elmImg of elmGalerieImg) {
@@ -62,7 +98,6 @@
 
       // Changement d'image au changement de bouton radio
       elmCarrousel__form__radio.addEventListener("mousedown", function () {
-        console.log(this.dataset.index);
 
         if (dernierIndex != -1) {
           elmCarrousel__figure.children[dernierIndex]
@@ -71,7 +106,6 @@
 
         elmCarrousel__figure.children[this.dataset.index]
         .classList.add("activer");
-        console.log(index);
         dernierIndex = this.dataset.index;
       });
     }

@@ -28,7 +28,7 @@
 
 
     // Fleches left right
-    elmButtonNextImage.addEventListener('mousedown', () => {
+    elmButtonNextImage.addEventListener('mousedown', function() {
       elmActiveImg = elmCarrousel__figure.querySelector('.activer');
       dernierIndex = elmActiveImg.dataset.index;
       index = elmActiveImg.dataset.index;
@@ -43,7 +43,7 @@
       elmNextImg.classList.add('activer');
     });
 
-    elmButtonPrevImage.addEventListener('mousedown', () => {
+    elmButtonPrevImage.addEventListener('mousedown', function() {
       elmActiveImg = elmCarrousel__figure.querySelector('.activer');
       dernierIndex = elmActiveImg.dataset.index;
       index = elmActiveImg.dataset.index;
@@ -80,7 +80,8 @@
       // elmImg représente une image de la galerie */
       elmImg.dataset.index = index;
       let elmCarrousel__figure__img = document.createElement("img");
-      elmCarrousel__figure__img.setAttribute("src", elmImg.getAttribute("src"));
+      elmCarrousel__figure__img.setAttribute("data-src", elmImg.getAttribute("data-src"));
+      elmCarrousel__figure__img.setAttribute("src", elmImg.getAttribute("data-src"));
       elmCarrousel__figure__img.classList.add("carrousel__figure__img");
       elmCarrousel__figure__img.dataset.index = index;
       elmCarrousel__figure.appendChild(elmCarrousel__figure__img);

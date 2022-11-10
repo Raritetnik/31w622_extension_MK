@@ -8,7 +8,7 @@
  * Plugin Name: mk_carroussel
  * Description: Permet d'afficher une boite modale de l'image sélectionné d'une galerie. Pour ensuite acceder à toutes les autres images de la galerie
  * Author: Mykhaylo Kuzmin
- * Author URL: https://github.com/Raritetnik
+ * Author URL: https://github.com/Raritetnik/31w622_extension_MK/tree/TP-1
  * Version: 1.0.0
  */
 
